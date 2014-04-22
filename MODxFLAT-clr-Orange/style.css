@@ -1,0 +1,32 @@
+/*import styles  from MODxFLAT Theme */
+
+@import url(../MODxFLAT/fontaw/css/font-awesome.min.css);
+@import url(../MODxFLAT/style.css);
+
+/*******color*******/
+/*base color orange #FF9900 ***/
+
+h1:before, .tab-pane ul li ul li:before, .tab-pane ul li ul li strong, .publishedNode, .dynamic-tab-pane-control .tab-row .tab.selected span, form h1:before, .dashboard h1:before, .dashboard-block-content ul li a, .treeButton i, .treeButtonDisabled i, #nav a:hover, .dashrow
+ul li span a, #nav li a:hover {
+    color: #FF9900!important;
+}
+
+input[type="button"], input[type="submit"], .sectionHeader, .tab-pane ul li strong, #nav li.active, #nav li.active ul.subnav, #nav li.active ul.subnav a, #mx_contextmenu #nameHolder{
+background:#FF9900!important; 
+}
+.dashboard-block-full a.hometblink img{
+border-color: #FF9900!important
+}
+/* nav active state*/
+#nav li.active, #nav li.active a:hover, #nav li.active ul.subnav a:hover {
+	color:#FFFFFF!important;
+}
+
+.tab-pane ul li ul li strong {
+	background:transparent!important;
+}
+/*subnab color links*/
+#nav li.active ul.subnav a{color:#232323!important;}
+
+/*color text in section header*/
+.sectionHeader {color:#232323!important;}
