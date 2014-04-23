@@ -4,17 +4,14 @@
  * Function:       Color style for MODxFLAT Theme -  You need MODxFLAT to use it.
  * Encoding:       UTF-8
  * Credit:         icons by Mark James of FamFamFam http://www.famfamfam.com/lab/icons/
- * Date:           22-Apr-2014
- * Version:        1.0
+ * Date:           23-Apr-2014
+ * Version:        1.1
  * MODX version:   1.0.13
 */
 
 // import templates and icon path from MODxFLAT
 $modx->config['manager_welcome_tpl'] = '@FILE:media/style/MODxFLAT/welcome.tpl';
-$modx->config['manager_login_tpl'] = '@FILE:media/style/MODxFLAT/login.tpl';
-$modx->config['manager_lockout_tpl'] = '@FILE:media/style/MODxFLAT/manager.lockout.tpl';
 $style_path = 'media/style/MODxFLAT/images/';
-
 // Tree Menu Toolbar
 // Tree Menu Toolbar
 $_style['add_doc_tree']             = '<i class="fa fa-file fa-lg"></i>';
