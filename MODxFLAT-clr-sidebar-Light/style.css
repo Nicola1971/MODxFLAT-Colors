@@ -1,0 +1,17 @@
+/*import styles  from MODxFLAT Theme */
+
+@import url(../MODxFLAT/fontaw/css/font-awesome.min.css);
+@import url(../MODxFLAT/style.css);
+
+/*******color*******/
+
+/* light sidebar style*/
+div.treeframebody, .treeButton:hover {	background: #f1f1f1;}
+#treeRoot small{color: #666666;}
+.treeNodeHover .publishedNode, .treeNodeSelected .publishedNode, 
+.rootNode, .treeNode, .treeNodeHover, .treeNodeSelected, .emptyNode{
+	color: #232323;
+}
+#treeMenu tr {	background: #232323;
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);}
