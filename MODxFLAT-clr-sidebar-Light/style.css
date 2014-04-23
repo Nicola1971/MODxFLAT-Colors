@@ -6,7 +6,8 @@
 /*******color*******/
 
 /* light sidebar style*/
-div.treeframebody, .treeButton:hover {	background: #f1f1f1;}
+div.treeframebody {	background: #f1f1f1;}
+.treeButton:hover {	background: #232323;}
 #treeRoot small{color: #666666;}
 .treeNodeHover .publishedNode, .treeNodeSelected .publishedNode, 
 .rootNode, .treeNode, .treeNodeHover, .treeNodeSelected, .emptyNode{
