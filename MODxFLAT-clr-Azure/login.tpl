@@ -40,18 +40,18 @@
 	 }
     form {  }
 
-    .sectionHeader {color: #f1f1f1;
-    text-shadow:1px 1px 0 rgba(0,0,0,0.6);
+ .sectionHeader {color: #f1f1f1;
+text-shadow:1px 1px 0 rgba(0,0,0,0.6);
 font-size:28px;
 text-align:center;
 font-weight: normal;
 letter-spacing:1px;
 padding: 100px 3px 20px 18px;
 background: #232b2d;
-border-bottom: 3px solid #DDDDDD;
+border-bottom: 3px solid #a5c8e5;
 	}
 
-   .sectionHeader a,.sectionHeader a:active,.sectionHeader a:visited,.sectionHeader a:link {color: #FFF;text-decoration: none;}
+   .sectionHeader a,.sectionHeader a:active,.sectionHeader a:visited,.sectionHeader a:link {color: #a5c8e5;text-decoration: none;}
     .sectionBody {padding: 2px 20px 20px;display: block;background: #f9f9f9;
 	    height: auto !important;
     height: 270px;
@@ -137,7 +137,7 @@ border-bottom: 3px solid #DDDDDD;
     </script>
 </head>
 <body id="login">
- <div class="sectionHeader"><a href="../"><i class="fa fa-lock fa-lg"></i> [+site_name+]</a></div>
+ <div class="sectionHeader"><a href="../"><i class="fa fa-lock fa-lg"></i>  [+site_name+]</a></div>
 <div id="mx_loginbox">
     <form method="post" name="loginfrm" id="loginfrm" action="processors/login.processor.php">
     <!-- anything to output before the login box via a plugin? -->
@@ -154,9 +154,10 @@ border-bottom: 3px solid #DDDDDD;
             <div>[+captcha_image+]</div>
             [+captcha_input+]
             <input type="checkbox" id="rememberme" name="rememberme" tabindex="4" value="1" class="checkbox" [+remember_me+] /><label for="rememberme" style="cursor:pointer">[+remember_username+]</label>
+
             <input type="submit" class="login" id="submitButton" value="[+login_button+]" />
             <!-- anything to output before the login box via a plugin ... like the forgot password link? -->
-            [+OnManagerLoginFormRender+]
+           [+OnManagerLoginFormRender+]
         </div>
     </form>
 </div>
