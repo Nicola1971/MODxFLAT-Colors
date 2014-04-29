@@ -6,7 +6,7 @@
 /*******color*******/
 /*base color pink #ff7997 ***/
 
-h1:before, .tab-pane ul li ul li:before, .tab-pane ul li ul li strong, .publishedNode, .dynamic-tab-pane-control .tab-row .tab.selected span, form h1:before, .dashboard h1:before, .dashboard-block-content ul li a, .treeButton i, .treeButtonDisabled i, #nav a:hover, .dashrow
+h1:before, .tab-pane ul li ul li:before, .tab-pane ul li ul li strong, .dynamic-tab-pane-control .tab-row .tab.selected span, form h1:before, .dashboard h1:before, .dashboard-block-content ul li a, .treeButton i, .treeButtonDisabled i, #nav a:hover, .dashrow
 ul li span a, #nav li a:hover {
     color: #ff7997!important;
 }
@@ -27,3 +27,10 @@ border-color: #ff7997!important
 }
 /*subnab color links*/
 #nav li.active ul.subnav a{color:#232323!important;}
+/*tree menu*/
+.treeNodeHover .publishedNode, .treeNodeSelected .publishedNode {
+ color: #FFFFFF!important;
+}
+.publishedNode{
+    color: #ff7997!important;
+}
