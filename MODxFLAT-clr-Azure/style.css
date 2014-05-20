@@ -38,3 +38,6 @@ border-color: #a5c8e5!important
 .publishedNode{
     color: #a5c8e5!important;
 }
+/*tab selected*/
+.dynamic-tab-pane-control .tab-row .tab.selected{
+border-top-color:#a5c8e5; }

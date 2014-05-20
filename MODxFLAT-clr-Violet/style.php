@@ -43,26 +43,26 @@ $_style['tree_page_info']           = $style_path.'fontaw/info.png';
 $_style['tree_page_blank']          = $style_path.'fontaw/file.png';
 $_style['tree_page_css']            = $style_path.'fontaw/file-text-alt.png';
 $_style['tree_page_html']           = $style_path.'fontaw/file-alt.png';
-$_style['tree_page_xml']            = $style_path.'fontaw/file-text-alt.png';
-$_style['tree_page_js']             = $style_path.'fontaw/file-text-alt.png';
-$_style['tree_page_rss']            = $style_path.'fontaw/file-text-alt.png';
-$_style['tree_page_pdf']            = $style_path.'fontaw/file-text-alt.png';
-$_style['tree_page_word']           = $style_path.'fontaw/file-alt.png';
-$_style['tree_page_excel']          = $style_path.'fontaw/file-text-alt.png';
+$_style['tree_page_xml']            = $style_path.'fontaw/file-code.png';
+$_style['tree_page_js']             = $style_path.'fontaw/file-code.png';
+$_style['tree_page_rss']            = $style_path.'fontaw/file-rss.png';
+$_style['tree_page_pdf']            = $style_path.'fontaw/file-pdf.png';
+$_style['tree_page_word']           = $style_path.'fontaw/file-word.png';
+$_style['tree_page_excel']          = $style_path.'fontaw/file-excel.png';
 $_style['tree_plusnode']            = $style_path.'fontaw/angle-right.png';
 $_style['tree_showtree']            = '<img src="'.$style_path.'fontaw/sitemap.png" width="16" height="16" align="absmiddle" />';
 $_style['tree_weblink']             = $style_path.'fontaw/link.png';
 
-$_style['tree_page_secure']         = $style_path.'tree/application_key.png';
-$_style['tree_page_blank_secure']   = $style_path.'tree/application_html_secure.png';
-$_style['tree_page_css_secure']     = $style_path.'tree/application_css_secure.png';
-$_style['tree_page_html_secure']    = $style_path.'tree/application_html_secure.png';
-$_style['tree_page_xml_secure']     = $style_path.'tree/application_xml_secure.png';
-$_style['tree_page_js_secure']      = $style_path.'tree/application_js_secure.png';
-$_style['tree_page_rss_secure']     = $style_path.'tree/application_rss_secure.png';
-$_style['tree_page_pdf_secure']     = $style_path.'tree/application_pdf_secure.png';
-$_style['tree_page_word_secure']    = $style_path.'tree/application_word_secure.png';
-$_style['tree_page_excel_secure']   = $style_path.'tree/application_excel_secure.png';
+$_style['tree_page_secure']         = $style_path.'fontaw/file-secure.png';
+$_style['tree_page_blank_secure']   = $style_path.'fontaw/file-secure.png';
+$_style['tree_page_css_secure']     = $style_path.'fontaw/file-code-secure.png';
+$_style['tree_page_html_secure']    = $style_path.'fontaw/file-secure.png';
+$_style['tree_page_xml_secure']     = $style_path.'fontaw/file-code-secure.png';
+$_style['tree_page_js_secure']      = $style_path.'fontaw/file-code-secure.png';
+$_style['tree_page_rss_secure']     = $style_path.'fontaw/file-rss-secure.png';
+$_style['tree_page_pdf_secure']     = $style_path.'fontaw/file-pdf-secure.png';
+$_style['tree_page_word_secure']    = $style_path.'fontaw/file-word-secure.png';
+$_style['tree_page_excel_secure']   = $style_path.'fontaw/file-excel-secure.png';
 
 
 // Icons

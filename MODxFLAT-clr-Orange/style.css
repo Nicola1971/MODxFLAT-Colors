@@ -29,7 +29,7 @@ border-color: #FF9900!important
 #nav li.active ul.subnav a{color:#232323!important;}
 
 /*color text in section header*/
-.sectionHeader {color:#232323!important;}
+.sectionHeader {color:#FFF!important;}
 
 /*tree menu*/
 .treeNodeHover .publishedNode, .treeNodeSelected .publishedNode {
@@ -38,3 +38,6 @@ border-color: #FF9900!important
 .publishedNode{
     color: #FF9900!important;
 }
+/*tab selected*/
+.dynamic-tab-pane-control .tab-row .tab.selected{
+border-top-color:#FF9900; }
