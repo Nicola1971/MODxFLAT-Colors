@@ -21,7 +21,9 @@ border-color: #466baf!important
 #nav li.active, #nav li.active a:hover, #nav li.active ul.subnav a:hover {
 	color:#FFFFFF!important;
 }
-
+.treeButton i:hover, .treeButtonDisabled i:hover {
+	color: #FFFFFF!important;
+}
 .tab-pane ul li ul li strong {
 	background:transparent!important;
 }
@@ -36,7 +38,7 @@ border-color: #466baf!important
  color: #FFFFFF!important;
 }
 .publishedNode{
-    color: #466baf!important;
+    color: #7391c7!important;
 }
 /*tab selected*/
 .dynamic-tab-pane-control .tab-row .tab.selected{
