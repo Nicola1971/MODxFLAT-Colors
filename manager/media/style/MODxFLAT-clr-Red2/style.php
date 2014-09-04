@@ -68,7 +68,7 @@ $_style['tree_page_excel_secure']   = $style_path.'fontaw/file-excel-secure.png'
 // Icons
 $_style['icons_add']                = $style_path.'fontaw/save.png';
 $_style['icons_cal']                = $style_path.'fontaw/calendar.png';
-$_style['icons_cal_nodate']         = $style_path.'fontaw/calendar-empty';
+$_style['icons_cal_nodate']         = $style_path.'fontaw/calendar-empty.png';
 $_style['icons_cancel']             = $style_path.'fontaw/remove.png';
 $_style['icons_close']              = $style_path.'fontaw/stop.png';
 $_style['icons_delete']             = $style_path.'fontaw/trash.png';
