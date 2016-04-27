@@ -1,0 +1,55 @@
+/*import styles  from MODxFLAT Theme */
+
+@import url(../MODxFLAT/fontaw/css/font-awesome.min.css);
+@import url(../MODxFLAT/style.css);
+
+/*******color*******/
+/*base color grey #ebebeb ***/
+
+h1:before, .tab-pane ul li ul li:before, .tab-pane ul li ul li strong,  form h1:before, .dashboard h1:before, .dashboard-block-content ul li a, .dashrow
+ul li span a {
+    color: #b6b6b6!important;
+}
+
+input[type="button"], input[type="submit"], .sectionHeader, .tab-pane ul li strong, #nav li.active, #nav li.active ul.subnav, #nav li.active ul.subnav a, #mx_contextmenu #nameHolder{
+background:#ebebeb!important; 
+}
+.dashboard-block-full a.hometblink img{
+border-color: #ebebeb!important
+}
+.treeButton i, .treeButtonDisabled i {
+	color: #80969c;
+}
+
+
+.treeButton i:hover, .treeButtonDisabled i:hover {
+	color: #111;
+}
+/* nav active state*/
+#nav li.active a{color: #666!important;}
+ .dynamic-tab-pane-control .tab-row .tab.selected span, #nav li.active a:hover {
+	color: #111!important;
+}
+#nav li a:hover{
+	color: #d6d6d6;
+}
+#tabSnippets.tab-page> ul> li> strong, .sectionHeader{
+color: #111!important;
+}
+.tab-pane ul li ul li strong {
+	background:transparent!important;
+}
+/*subnab color links*/
+#nav li.active ul.subnav a{color: #666;}
+#nav li.active ul.subnav a:hover {color: #000!important;}
+
+/*tree menu*/
+.treeNodeHover .publishedNode, .treeNodeSelected .publishedNode {
+ color: #FFFFFF!important;
+}
+.publishedNode{
+    color: #f5f5f5!important;
+}
+/*tab selected*/
+.dynamic-tab-pane-control .tab-row .tab.selected{
+border-top-color: #d6d6d6; }
