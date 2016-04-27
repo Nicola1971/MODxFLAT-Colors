@@ -8,6 +8,10 @@ http://www.tattoocms.it/manager-templates/modxflat-color-skins.html
 
 # Updates
 
+## 1.3
+* new Grey Skin
+* sort tree items icon https://github.com/Nicola1971/MODxFLAT-Theme/issues/2
+
 ## 1.2
 
 * New Fucsia skin #FF00FF
