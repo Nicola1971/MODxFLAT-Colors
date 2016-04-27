@@ -24,6 +24,7 @@ $_style['hide_tree']                = '<i class="fa fa-caret-square-o-left fa-lg
 $_style['refresh_tree']             = '<i class="fa fa-refresh fa-lg"></i>';
 $_style['show_tree']                = $style_path.'fontaw/expand.png';
 $_style['sort_tree']                = '<i class="fa fa-sort fa-lg"></i>';
+$_style['sort_menuindex']           = '<i class="fa fa-sort-numeric-asc fa-lg"></i>';
 
 
 // Tree Icons
