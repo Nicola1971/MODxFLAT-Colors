@@ -5,6 +5,8 @@ Colors for MODxFLAT
 
 http://www.tattoocms.it/manager-templates/modxflat-color-skins.html
 
+https://github.com/Nicola1971/MODxFLAT-Theme
+
 
 # Updates
 
