@@ -104,6 +104,7 @@ $_style['icons_event1']             = $style_path.'fontaw/info-sign.png';
 $_style['icons_event2']             = $style_path.'fontaw/warning-sign.png';
 $_style['icons_event3']             = $style_path.'fontaw/remove-sign.png';
 $_style['icons_secured']            = $style_path.'fontaw/lock.png';
+$_style['icons_sort_menuindex']     = $style_path.'fontaw/sort-by-order.png';
 
 // Tabs
 $_style['icons_tab_preview']        = $style_path.'fontaw/eye-open.png';
