@@ -10,6 +10,9 @@ https://github.com/Nicola1971/MODxFLAT-Theme
 
 # Updates
 
+## 1.3.1
+* Contextual Menu sort menuindex icon
+
 ## 1.3
 * new Grey Skin
 * sort tree items icon https://github.com/Nicola1971/MODxFLAT-Theme/issues/2
