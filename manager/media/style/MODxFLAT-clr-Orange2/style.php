@@ -8,7 +8,8 @@
  * Version:        2.0
  * MODX version:   1.0.13
 */
-$style_path = 'media/style/' . $modx->config['manager_theme'] . '/images/';
+$modx->config['manager_welcome_tpl'] = '@FILE:media/style/MODxFLAT/welcome.tpl';
+$style_path = 'media/style/MODxFLAT/images/';
 
 // Tree Menu Toolbar
 $_style['add_doc_tree']             = '<i class="fa fa-file fa-lg"></i>';
