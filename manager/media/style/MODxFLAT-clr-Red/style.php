@@ -1,17 +1,14 @@
 <?php
 /**
  * Filename:       media/style/$modx->config['manager_theme']/style.php
- * Function:       Color style for MODxFLAT Theme -  You need MODxFLAT to use it.
+ * Function:       Manager style variables for images and icons.
  * Encoding:       UTF-8
  * Credit:         icons by Mark James of FamFamFam http://www.famfamfam.com/lab/icons/
- * Date:           23-Apr-2014
- * Version:        1.2
+ * Date:           24-Apr-2014
+ * Version:        2.0
  * MODX version:   1.0.13
 */
-
-// import templates and icon path from MODxFLAT
-$modx->config['manager_welcome_tpl'] = '@FILE:media/style/MODxFLAT/welcome.tpl';
-$style_path = 'media/style/MODxFLAT/images/';
+$style_path = 'media/style/' . $modx->config['manager_theme'] . '/images/';
 
 // Tree Menu Toolbar
 $_style['add_doc_tree']             = '<i class="fa fa-file fa-lg"></i>';
@@ -25,7 +22,9 @@ $_style['refresh_tree']             = '<i class="fa fa-refresh fa-lg"></i>';
 $_style['show_tree']                = $style_path.'fontaw/expand.png';
 $_style['sort_tree']                = '<i class="fa fa-sort fa-lg"></i>';
 $_style['sort_menuindex']           = '<i class="fa fa-sort-numeric-asc fa-lg"></i>';
-
+$_style['element_management']            = '<i class="fa fa-wrench fa-lg"></i>';
+$_style['images_management']             = '<i class="fa fa-file-image-o fa-lg"></i>';
+$_style['files_management']  = '<i class="fa fa-files-o fa-lg"></i>';
 
 // Tree Icons
 $_style['tree_deletedpage']         = $style_path.'fontaw/file.png';
