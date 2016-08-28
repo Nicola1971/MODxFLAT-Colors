@@ -27,6 +27,20 @@ $_style['element_management']            = '<i class="fa fa-wrench fa-lg"></i>';
 $_style['images_management']             = '<i class="fa fa-file-image-o fa-lg"></i>';
 $_style['files_management']  = '<i class="fa fa-files-o fa-lg"></i>';
 
+//Tree Contextual Menu Popup
+$_style['ctx_new_document']         = 'fa fa-file-o fa-fw fa-lg';
+$_style['ctx_save']                 = 'fa fa-check-circle-o fa-fw fa-lg';
+$_style['ctx_move_document']        = 'fa fa-arrows fa-fw fa-lg';
+$_style['ctx_resource_duplicate']   = 'fa fa-clone fa-fw fa-lg';
+$_style['ctx_sort_menuindex']       = 'fa fa-sort-numeric-asc fa-fw fa-lg';
+$_style['ctx_publish_document']     = 'fa fa-check-square-o fa-fw fa-lg';
+$_style['ctx_unpublish_resource']   = 'fa fa-square-o fa-fw fa-lg';
+$_style['ctx_delete']               = 'fa fa-trash fa-fw fa-lg';
+$_style['ctx_undelete_resource']    = 'fa fa-arrow-circle-o-up fa-fw fa-lg';
+$_style['ctx_weblink']              = 'fa fa-link fa-fw fa-lg';
+$_style['ctx_resource_overview']    = 'fa fa-info fa-fw fa-lg';
+$_style['ctx_preview_resource']     = 'fa fa-eye fa-fw fa-lg';
+
 // Tree Icons
 $_style['tree_deletedpage']         = $style_path.'fontaw/file.png';
 $_style['tree_folder']              = $style_path.'fontaw/folder-close-alt.png'; /* folder.png */
