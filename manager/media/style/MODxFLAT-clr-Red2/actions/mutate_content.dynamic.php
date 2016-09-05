@@ -147,18 +147,29 @@ if (isset ($_POST['which_editor'])) {
     $which_editor = $_POST['which_editor'];
 }
 ?>
+<script type="text/javascript" src="media/calendar/datepicker.js"></script>
 <script type="text/javascript">
 /* <![CDATA[ */
 window.addEvent('domready', function(){
-    $$('img[src=<?php echo $_style["icons_tooltip_over"]?>]').each(function(help_img) {
-        help_img.removeProperty('onclick');
-        help_img.removeProperty('onmouseover');
-        help_img.removeProperty('onmouseout');
-        help_img.setProperty('title', help_img.getProperty('alt') );
-        help_img.setProperty('class', 'tooltip' );
-        if (window.ie) help_img.removeProperty('alt');
-    });
-    new Tips($$('.tooltip'),{className:'custom'} );
+    var dpOffset = <?php echo $modx->config['datepicker_offset']; ?>;
+    var dpformat = "<?php echo $modx->config['datetime_format']; ?>" + ' hh:mm:00';
+    var dpdayNames = <?php echo $_lang['dp_dayNames']; ?>;
+    var dpmonthNames = <?php echo $_lang['dp_monthNames']; ?>;
+    var dpstartDay = <?php echo $_lang['dp_startDay']; ?>;
+    new DatePicker($('pub_date'), {'yearOffset': dpOffset,'format':dpformat, 'dayNames':dpdayNames, 'monthNames':dpmonthNames,'startDay':dpstartDay});
+    new DatePicker($('unpub_date'), {'yearOffset': dpOffset,'format':dpformat, 'dayNames':dpdayNames, 'monthNames':dpmonthNames,'startDay':dpstartDay});
+
+    if( !window.ie6 ) {
+        $$('img[src=<?php echo $_style["icons_tooltip_over"]?>]').each(function(help_img) {
+            help_img.removeProperty('onclick');
+            help_img.removeProperty('onmouseover');
+            help_img.removeProperty('onmouseout');
+            help_img.setProperty('title', help_img.getProperty('alt') );
+            help_img.setProperty('class', 'tooltip' );
+            if (window.ie) help_img.removeProperty('alt');
+        });
+        new Tips($$('.tooltip'),{className:'custom'} );
+    }
 });
 
 // save tree folder state
@@ -512,43 +523,9 @@ $page=isset($_REQUEST['page'])?(int)$_REQUEST['page']:'';
 <fieldset id="create_edit">
     <h1><?php if ($_REQUEST['id']){echo $_lang['edit_resource_title'] . ' <small>('. $_REQUEST['id'].')</small>'; } else { echo $_lang['create_resource_title'];}?></h1>
 
-    <?php
-    // breadcrumbs
-    if ($modx->config['use_breadcrumbs']) {
-        $temp = array();
-        $title = isset($content['pagetitle']) ? $content['pagetitle'] : $_lang['create_resource_title'];
-
-        if (isset($_REQUEST['id']) && $content['parent'] != 0) {
-            $bID = (int)$_REQUEST['id'];
-            $temp = $modx->getParentIds($bID);
-        } else if (isset($_REQUEST['pid'])) {
-            $bID = (int)$_REQUEST['pid'];
-            $temp = $modx->getParentIds($bID);
-            array_unshift($temp, $bID);
-        }
-
-        if ($temp) {
-            $parents = implode(',', $temp);
-
-            if (!empty($parents)) {
-                $query = $modx->db->query("SELECT id, pagetitle FROM " . $modx->getFullTableName("site_content") . " WHERE id IN (" . $parents . ") ORDER BY FIND_IN_SET(id, '" . $parents . "') DESC");
-                while ($row = $modx->db->getRow($query)) {
-                    $out .= '<li class="breadcrumbs__li">
-                                        <a href="index.php?a=27&id=' . $row['id'] . '" class="breadcrumbs__a">' . htmlspecialchars($row['pagetitle'], ENT_QUOTES, $modx->config['modx_charset']) . '</a>
-                                        <span class="breadcrumbs__sep">></span>
-                                    </li>';
-                }
-            }
-        }
-
-        $out .= '<li class="breadcrumbs__li breadcrumbs__li_current">' . $title . '</li>';
-        echo '<ul class="breadcrumbs">' . $out . '</ul>';
-    }
-    ?>
-
 <div id="actions">
       <ul class="actionButtons">
-          <li id="Button1" class="transition">
+          <li id="Button1">
             <a href="#" class="primary" onclick="documentDirty=false; document.mutate.save.click();">
               <img alt="icons_save" src="<?php echo $_style["icons_save"]?>" /> <?php echo $_lang['save']?>
             </a>
@@ -568,7 +545,7 @@ $page=isset($_REQUEST['page'])?(int)$_REQUEST['page']:'';
           <li id="Button6"><a href="#" onclick="duplicatedocument();"><img src="<?php echo $_style["icons_resource_duplicate"] ?>" alt="icons_resource_duplicate" /> <?php echo $_lang['duplicate']?></a></li>
           <li id="Button3"><a href="#" onclick="deletedocument();"><img src="<?php echo $_style["icons_delete_document"] ?>" alt="icons_delete_document" /> <?php echo $_lang['delete']?></a></li>
       <?php } ?>
-          <li id="Button4" class="transition"><a href="#" onclick="documentDirty=false;<?php echo $id==0 ? "document.location.href='index.php?a=2';" : "document.location.href='index.php?a=3&amp;id=$id".htmlspecialchars($add_path)."';"?>"><img alt="icons_cancel" src="<?php echo $_style["icons_cancel"] ?>" /> <?php echo $_lang['cancel']?></a></li>
+          <li id="Button4"><a href="#" onclick="documentDirty=false;<?php echo $id==0 ? "document.location.href='index.php?a=2';" : "document.location.href='index.php?a=3&amp;id=$id".htmlspecialchars($add_path)."';"?>"><img alt="icons_cancel" src="<?php echo $_style["icons_cancel"] ?>" /> <?php echo $_lang['cancel']?></a></li>
           <li id="Button5"><a href="#" onclick="window.open('<?php echo $modx->makeUrl($id); ?>','previeWin');"><img alt="icons_preview_resource" src="<?php echo $_style["icons_preview_resource"] ?>" /> <?php echo $_lang['preview']?></a></li>
       </ul>
 </div>
@@ -664,14 +641,13 @@ $page=isset($_REQUEST['page'])?(int)$_REQUEST['page']:'';
                 &nbsp;&nbsp;<img src="<?php echo $_style["icons_tooltip_over"]?>" onmouseover="this.src='<?php echo $_style["icons_tooltip"]?>';" onmouseout="this.src='<?php echo $_style["icons_tooltip_over"]?>';" alt="<?php echo $_lang['resource_opt_menu_title_help']?>" onclick="alert(this.alt);" style="cursor:help;" /></td></tr>
             <tr style="height: 24px;"><td align="left" style="width:100px;"><span class="warning"><?php echo $_lang['resource_opt_menu_index']?></span></td>
                 <td>
-                    <input name="menuindex" type="text" maxlength="6" value="<?php echo $content['menuindex']?>" class="inputBox2" style="width:30px;" onchange="documentDirty=true;" /><input type="button" value="&lt;" onclick="var elm = document.mutate.menuindex;var v=parseInt(elm.value+'')-1;elm.value=v>0? v:0;elm.focus();documentDirty=true;" /><input type="button" value="&gt;" onclick="var elm = document.mutate.menuindex;var v=parseInt(elm.value+'')+1;elm.value=v>0? v:0;elm.focus();documentDirty=true;" />
+                    <input name="menuindex" type="text" maxlength="6" value="<?php echo $content['menuindex']?>" class="inputBox smallinputBox" style="width:30px;" onchange="documentDirty=true;" /><input type="button" value="&lt;" onclick="var elm = document.mutate.menuindex;var v=parseInt(elm.value+'')-1;elm.value=v>0? v:0;elm.focus();documentDirty=true;" /><input type="button" value="&gt;" onclick="var elm = document.mutate.menuindex;var v=parseInt(elm.value+'')+1;elm.value=v>0? v:0;elm.focus();documentDirty=true;" />
                     &nbsp;&nbsp;<img src="<?php echo $_style["icons_tooltip_over"]?>" onmouseover="this.src='<?php echo $_style["icons_tooltip"]?>';" onmouseout="this.src='<?php echo $_style["icons_tooltip_over"]?>';" alt="<?php echo $_lang['resource_opt_menu_index_help']?>" onclick="alert(this.alt);" style="cursor:help;" />
                     </td>
                 </tr>
             <tr style="height: 24px;">
               <td align="left" style="width:100px;"><span class="warning"><?php echo $_lang['resource_opt_show_menu']?></span></td>
-                <td>    
-    <div class="form-group">
+                <td><div class="form-group">
         <label class="form-switch">
             <input type="checkbox" name="hidemenucheck" <?php echo $content['hidemenu']!=1 ? 'checked="checked"':''?> onclick="changestate(document.mutate.hidemenu);" />
             <i class="form-icon"></i> <input type="hidden" name="hidemenu" class="hidden" value="<?php echo ($content['hidemenu']==1) ? 1 : 0?>" />
@@ -790,15 +766,16 @@ $page=isset($_REQUEST['page'])?(int)$_REQUEST['page']:'';
                     while ($row = $modx->db->getRow($rs)) {
                         // Go through and display all Template Variables
                         if ($row['type'] == 'richtext' || $row['type'] == 'htmlarea') {
-                            // determine TV-options
-                            $tvOptions = $modx->parseProperties($row['elements']);
-                            if(!empty($tvOptions)) {
-                                // Allow different Editor with TV-option {"editor":"CKEditor4"} or &editor=Editor;text;CKEditor4
-                                $editor = isset($tvOptions['editor']) ? $tvOptions['editor']: $which_editor;
-                            };
                             // Add richtext editor to the list
-                            $richtexteditorIds[$editor][] = "tv".$row['id'];
-                            $richtexteditorOptions[$editor]["tv".$row['id']] = $tvOptions;
+                            if (is_array($replace_richtexteditor)) {
+                                $replace_richtexteditor = array_merge($replace_richtexteditor, array(
+                                    "tv" . $row['id'],
+                                ));
+                            } else {
+                                $replace_richtexteditor = array(
+                                    "tv" . $row['id'],
+                                );
+                            }
                         }
                         // splitter
                         if ($i++ > 0)
@@ -814,12 +791,11 @@ $page=isset($_REQUEST['page'])?(int)$_REQUEST['page']:'';
                         } else {
                             $tvPBV = $row['value'];
                         }
-						
+
 						$tvDescription = (!empty($row['description'])) ? '<br /><span class="comment">' . $row['description'] . '</span>' : '';
 						$tvInherited = (substr($tvPBV, 0, 8) == '@INHERIT') ? '<br /><span class="comment inherited">(' . $_lang['tmplvars_inherited'] . ')</span>' : '';
-						$tvName = $modx->hasPermission('edit_template') ? '<br/><small class="protectedNode">[*'.$row['name'].'*]</small>' : '';
-						
-                        echo "\t\t",'<tr style="height: 24px;"><td align="left" valign="top" width="150"><span class="warning">',$row['caption'].$tvName,"</span>\n",
+                       
+                        echo "\t\t",'<tr style="height: 24px;"><td align="left" valign="top" width="150"><span class="warning">',$row['caption'],"</span>\n",
                              "\t\t\t",$tvDescription,$tvInherited,"</td>\n",
                              "\t\t\t",'<td valign="top" style="position:relative;',($row['type'] == 'date' ? '' : ''),'">',"\n",
                              "\t\t\t",renderFormElement($row['type'], $row['id'], $row['default_text'], $row['elements'], $tvPBV, '', $row),"\n",
@@ -837,7 +813,7 @@ $page=isset($_REQUEST['page'])?(int)$_REQUEST['page']:'';
 
     </div><!-- end #tabGeneral -->
 
-    <!-- Settings -->
+   <!-- Settings -->
     <div class="tab-page" id="tabSettings">
         <h2 class="tab"><?php echo $_lang['settings_page_settings']?></h2>
         <script type="text/javascript">tpSettings.addTabPage( document.getElementById( "tabSettings" ) );</script>
@@ -1267,17 +1243,14 @@ if (is_array($evtOut)) echo implode('', $evtOut);
 </script>
 <?php
     if (($content['richtext'] == 1 || $_REQUEST['a'] == '4' || $_REQUEST['a'] == '72') && $use_editor == 1) {
-        if (is_array($richtexteditorIds)) {
-            foreach($richtexteditorIds as $editor=>$elements) {
-                // invoke OnRichTextEditorInit event
-                $evtOut = $modx->invokeEvent('OnRichTextEditorInit', array(
-                    'editor' => $editor,
-                    'elements' => $elements,
-                    'options' => $richtexteditorOptions[$editor]
-                ));
-                if (is_array($evtOut))
-                    echo implode('', $evtOut);
-            }
+        if (is_array($replace_richtexteditor)) {
+            // invoke OnRichTextEditorInit event
+            $evtOut = $modx->invokeEvent('OnRichTextEditorInit', array(
+                'editor' => $which_editor,
+                'elements' => $replace_richtexteditor
+            ));
+            if (is_array($evtOut))
+                echo implode('', $evtOut);
         }
     }
 
